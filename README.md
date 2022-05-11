@@ -33,7 +33,11 @@ It uses _us-east-1_ as default aws region and searches for the credentials file 
 If you want to change it, add this:
 ```shell
 REGION=us-east-1
-AWS_CREDENTIALS_PATH=/Users/you/.aws/credentials
+SSO_URL="https://<your-project>.awsapps.com/start#/"
+AWS_CREDENTIALS_PATH=/home/<user>/.aws/credentials
+USE_ACCOUNT_ID=true
+DEFAULT_SECTION=<account_id>_<role_name>
+ACCOUNTS=account1,account2,account3
 ```
 
 ### First time use
@@ -56,8 +60,9 @@ AWS_CREDENTIALS_PATH=/Users/you/.aws/credentials
 
 For consecuents runs just start from step 3.
 
-# Author
+# Authors
 * Leandro Salomon
+* Rafael Nascimento
 
 
 
