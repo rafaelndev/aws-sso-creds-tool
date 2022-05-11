@@ -36,7 +36,7 @@ REGION=us-east-1
 SSO_URL="https://<your-project>.awsapps.com/start#/"
 AWS_CREDENTIALS_PATH=/home/<user>/.aws/credentials
 USE_ACCOUNT_ID=true
-DEFAULT_SECTION=<account_id>_<role_name>
+DEFAULT_SECTION=<account_id>_<role_name> // section to be used to create a [default] section in credentials
 ACCOUNTS=account1,account2,account3
 ```
 
