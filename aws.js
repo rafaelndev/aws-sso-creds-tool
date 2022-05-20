@@ -21,7 +21,8 @@ exports.authorizeDevice = async (clientId, clientSecret) => {
     const { verificationUri, deviceCode, userCode } = await clientDevice.send(startDeviceAuthorizationCommand)
 
     open(`${verificationUri}?user_code=${userCode}`)
-    await waitForInput('After login in press a key...')
+    console.info('Waiting for login, to cancel press CTRL+C')
+    // await waitForInput('After login in press a key...')
 
     return {
         deviceCode: deviceCode,

@@ -13,6 +13,30 @@ const {
 const {error} = require("./util")
 const config = new ConfigParser()
 
+async function pollForAccessToken(clientId, clientSecret, deviceCode, userCode)
+{
+     return getAccessToken(clientId, clientSecret, deviceCode, userCode).catch(
+       (error) => {
+         if (error.name === 'AuthorizationPendingException') {
+           return new Promise((resolve) => {
+             setTimeout(
+               () =>
+                 pollForAccessToken(
+                   clientId,
+                   clientSecret,
+                   deviceCode,
+                   userCode
+                 ).then(resolve),
+               1000
+             );
+           });
+         }
+         console.error(error);
+       });
+}
+
+
+
 const updateCredentials = async () => {
     // search for credentials file first, default: ~/.aws/credentials
     try {
@@ -25,7 +49,9 @@ const updateCredentials = async () => {
     const { clientId, clientSecret } = await registerClient()
     // needs to the user to be fully logged in
     const { deviceCode, userCode } = await authorizeDevice(clientId, clientSecret)
-    const { accessToken } = await getAccessToken(clientId, clientSecret, deviceCode, userCode)
+
+    // const { accessToken } = await getAccessToken(clientId, clientSecret, deviceCode, userCode);
+    const { accessToken } = await pollForAccessToken(clientId, clientSecret, deviceCode, userCode);
     const { accountList } = await getAccounts(accessToken)
 
     for (const { accountId, accountName } of accountList) {
