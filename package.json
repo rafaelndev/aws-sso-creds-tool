@@ -12,8 +12,7 @@
   "dependencies": {
     "@aws-sdk/client-sso": "^3.18.0",
     "@aws-sdk/client-sso-oidc": "^3.18.0",
-    "configparser": "^0.3.9",
-    "dotenv": "^10.0.0",
+    "conf": "^10.1.2",
     "open": "^8.2.1"
   },
   "keywords": [
