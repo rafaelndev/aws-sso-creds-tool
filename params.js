@@ -16,7 +16,7 @@ module.exports = Object.freeze({
     config.get("ssoUrl") ?? console.error("please set the sso default url"),
   awsCredentialsPath:
     config.get("awsCredentialsPath") ?? `${os.homedir()}/.aws/credentials`,
-  useAccountId: config.get("useAccountId") === "true",
+  useAccountId: config.get("useAccountId"),
   sso_accounts: config.get("accounts")?.split(","),
   region: config.get("region") ?? "us-east-1",
   clientName: os.hostname(),
