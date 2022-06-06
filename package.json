@@ -13,6 +13,7 @@
     "@aws-sdk/client-sso": "^3.18.0",
     "@aws-sdk/client-sso-oidc": "^3.18.0",
     "conf": "^10.1.2",
+    "configparser": "^0.3.9",
     "open": "^8.2.1"
   },
   "keywords": [
