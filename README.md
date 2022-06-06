@@ -23,7 +23,7 @@ The SSO credentials expires every day, so I did not want to update this file man
 When running for the first time, a config.json file will be created on path:
 
 ```
-~/.config/aws-sso-creds-tool-nodejs/config.json
+~/.config/auto-aws-sso-creds-nodejs/config.json
 ```
 
 Then you need to change its parameters:

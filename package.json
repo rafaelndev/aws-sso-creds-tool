@@ -1,18 +1,18 @@
 {
-  "name": "aws-sso-creds-tool",
+  "name": "auto-aws-sso-creds",
   "description": "script to (almost)auto update aws sso credentials",
   "version": "1.0.0",
   "main": "app.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leandrosalo/aws-sso-creds-tool.git"
+    "url": "git+https://github.com/rafaelndev/aws-sso-creds-tool.git"
   },
   "scripts": {
     "start": "node ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/leandrosalo/aws-sso-creds-tool#readme",
+  "homepage": "https://github.com/rafaelndev/aws-sso-creds-tool#readme",
   "dependencies": {
     "@aws-sdk/client-sso": "^3.18.0",
     "@aws-sdk/client-sso-oidc": "^3.18.0",
@@ -36,5 +36,6 @@
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=16.0.0"
-  }
+  },
+  "author": ""
 }
