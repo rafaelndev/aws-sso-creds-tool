@@ -8,6 +8,10 @@
     "type": "git",
     "url": "git+https://github.com/leandrosalo/aws-sso-creds-tool.git"
   },
+  "scripts": {
+    "start": "node ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "homepage": "https://github.com/leandrosalo/aws-sso-creds-tool#readme",
   "dependencies": {
     "@aws-sdk/client-sso": "^3.18.0",
@@ -26,6 +30,9 @@
     "aws single sign on",
     "single sign on"
   ],
+  "bin": {
+    "auto-aws": "./app.js"
+  },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=16.0.0"
