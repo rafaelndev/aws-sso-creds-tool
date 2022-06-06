@@ -14,7 +14,7 @@ The SSO credentials expires every day, so I did not want to update this file man
 
 ## Requirements
 
-- Node.js - [Install Node.js](https://nodejs.org/en/), including the npm package management tool.
+- Node.js 16+ - [Install Node.js](https://nodejs.org/en/), including the npm package management tool.
 
 ## How to use
 
