@@ -25,5 +25,9 @@
     "aws authentication",
     "aws single sign on",
     "single sign on"
-  ]
+  ],
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  }
 }
