@@ -1,21 +1,21 @@
 #!/usr/bin/env node
 
-const {
+import {
   awsCredentialsPath,
   useAccountId,
   defaultSection,
   sso_accounts,
-} = require("./params");
-const ConfigParser = require("configparser");
-const {
+} from "./params.js";
+import ConfigParser from "configparser";
+import {
   getAccountRoleCredentials,
   getAccountRoles,
   getAccounts,
   getAccessToken,
   authorizeDevice,
   registerClient,
-} = require("./aws");
-const { error } = require("./util");
+} from "./aws.js";
+import { error } from "./util.js";
 const config = new ConfigParser();
 
 async function pollForAccessToken(

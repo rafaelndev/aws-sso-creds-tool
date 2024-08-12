@@ -1,6 +1,6 @@
 // env variables
-const os = require("os");
-const Conf = require("conf");
+import { homedir, hostname } from "os";
+import Conf from "conf";
 const config = new Conf({
   defaults: {
     region: "us-east-1",
@@ -11,14 +11,12 @@ const config = new Conf({
   },
 });
 
-module.exports = Object.freeze({
-  startUrl:
-    config.get("ssoUrl") ?? console.error("please set the sso default url"),
-  awsCredentialsPath:
-    config.get("awsCredentialsPath") ?? `${os.homedir()}/.aws/credentials`,
-  useAccountId: config.get("useAccountId"),
-  sso_accounts: config.get("accounts")?.split(","),
-  region: config.get("region") ?? "us-east-1",
-  clientName: os.hostname(),
-  defaultSection: config.get("defaultSection") ?? "ViewOnlyAccess",
-});
+export const startUrl =
+  config.get("ssoUrl") ?? console.error("please set the sso default url");
+export const awsCredentialsPath =
+  config.get("awsCredentialsPath") ?? `${homedir()}/.aws/credentials`;
+export const useAccountId = config.get("useAccountId");
+export const sso_accounts = config.get("accounts")?.split(",");
+export const region = config.get("region") ?? "us-east-1";
+export const clientName = hostname();
+export const defaultSection = config.get("defaultSection") ?? "ViewOnlyAccess";
